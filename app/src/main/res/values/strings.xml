@@ -1,0 +1,83 @@
+<resources>
+    <string name="app_name">Med App</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="mobile_number">Enter username or Mobile no.</string>
+    <string name="password">Enter password</string>
+    <string name="log_in">Log In</string>
+    <string name="forgot_password">Forget Password</string>
+    <string name="register_yourself">Register Yourself</string>
+    <string name="patient">Patient</string>
+    <string name="doctor">Doctor</string>
+    <string name="choose_your_role">Choose your role</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="enter_Name">Enter Name</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="enter_contact">Enter Contact no.</string>
+    <string name="enter_address">Enter Address</string>
+    <string name="enter_age">Enter Age</string>
+    <string name="enter_password">Create Password</string>
+    <string name="login_here">Login Here</string>
+    <string name="image">Image</string>
+    <string name="navigation_drawer">Navigation</string>
+    <string name="profile">Profile</string>
+    <string name="home">Home</string>
+    <string name="details">Med Details</string>
+    <string name="open_drawer">Open Drawer</string>
+    <string name="close_drawer">Close Drawer</string>
+    <string name="diseases">Diseases</string>
+    <string-array name="gender_options">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="Gender_options">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+    <string name="gender_prompt">Select Gender</string>
+
+    <string-array name="Specialization">
+        <item>MBBS</item>
+        <item>MCH</item>
+        <item>MD</item>
+        <item>DM</item>
+        <item>MDS</item>
+        <item>MS Ortho</item>
+        <item>DA</item>
+        <item>DCH</item>
+        <item>DGU</item>
+        <item>DLO</item>
+        <item>DOMS</item>
+        <item>DPM</item>
+        <item>DTMH</item>
+        <item>DVD</item>
+        <item>DTCD</item>
+        <item>BAMS</item>
+        <item>BUMS</item>
+        <item>BHMS</item>
+        <item>BDS</item>
+        <item>BIMS</item>
+
+    </string-array>
+
+    <string-array name="insurance">
+        <item>--Insured--</item>
+        <item>Yes</item>
+        <item>No</item>
+
+    </string-array>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enter_hospitalname">Enter Hospital name</string>
+    <string name="AshuChoudhary">Ashu choudhary</string>
+    <string name="Email">ashuchoudhary@gmail.com</string>
+    <string name="address">Muzaffarnagar, Uttar Pradesh, India</string>
+    <string name="contact">+91 7983132721</string>
+    <string name="edit_profile">Edit Details</string>
+    <string name="profile_image">Profile_Image</string>
+</resources>

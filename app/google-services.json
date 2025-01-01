@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "454103505149",
+    "project_id": "med-app-eacad",
+    "storage_bucket": "med-app-eacad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:454103505149:android:ece29d06e9ddbf1d2b8694",
+        "android_client_info": {
+          "package_name": "com.example.medapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlqAjfV58f7-cGI4tTJGzBgZfKW7BqpFY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

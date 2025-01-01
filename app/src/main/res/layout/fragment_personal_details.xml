@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.Personal_details_fragment">
+
+    <TextView
+        android:id="@+id/txt_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="Personal  Details"
+        android:textSize="35sp"
+        android:textStyle="italic"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="20dp"
+        />
+    <TextView
+        android:id="@+id/txt_age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Age: "
+        android:textSize="24sp"
+        android:layout_below="@id/txt_sex"
+        android:layout_margin="10dp"
+
+        />
+    <TextView
+        android:id="@+id/edit_age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_sex"
+        android:text="22"
+        android:textSize="24sp"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@id/txt_age"
+        android:layout_margin="10dp"
+        />
+    <TextView
+        android:id="@+id/txt_weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Weight(In kg): "
+        android:textSize="24sp"
+        android:layout_below="@id/txt_height"
+        android:layout_margin="10dp"
+
+        />
+    <TextView
+        android:id="@+id/edit_weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_height"
+        android:text="70"
+        android:textSize="24sp"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@id/txt_weight"
+        android:layout_margin="10dp"
+        />
+    <TextView
+        android:id="@+id/txt_sex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sex: "
+        android:textSize="24sp"
+        android:layout_below="@id/txt_bloodgroup"
+        android:layout_margin="10dp"
+
+        />
+    <TextView
+        android:id="@+id/edit_sex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_bloodgroup"
+        android:text="Male"
+        android:textSize="24sp"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@id/txt_sex"
+        android:layout_margin="10dp"
+        />
+    <TextView
+        android:id="@+id/txt_height"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Height(In Foot &amp; Inch): "
+        android:textSize="24sp"
+        android:layout_below="@id/txt_details"
+        android:layout_margin="10dp"
+
+        />
+    <TextView
+        android:id="@+id/edit_height"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_details"
+        android:text="6' 11'"
+        android:textSize="24sp"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@id/txt_height"
+        android:layout_margin="10dp"
+        />
+    <TextView
+        android:id="@+id/txt_bloodgroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Blood Group: "
+        android:textSize="24sp"
+        android:layout_below="@id/txt_weight"
+        android:layout_margin="10dp"
+        />
+    <TextView
+        android:id="@+id/edit_bloodgroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_weight"
+        android:text="O-"
+        android:layout_margin="10dp"
+        android:textSize="24sp"
+        android:layout_toEndOf="@id/txt_bloodgroup"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:text="@string/edit_profile"
+        />
+
+
+</RelativeLayout>
