@@ -1,31 +1,29 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingStart="16dp"
     android:paddingEnd="16dp"
-    tools:context=".fragment.Home_fragment">
+    tools:context=".fragment.Home_fragment"
+    android:background="#05766A">
 
     <TextView
         android:id="@+id/txt_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         android:text="SERVICES"
         android:textAlignment="center"
-        android:textSize="25sp"
-        android:textStyle="italic" />
+        android:textColor="@color/black"
+        android:textSize="45sp"
+        android:textStyle="bold|italic"
+        />
 
     <LinearLayout
         android:id="@+id/container"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txt_header"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="16dp"
-        android:foregroundGravity="center"
-        android:gravity="center"
+        android:layout_centerInParent="true"
         android:orientation="vertical">
 
         <LinearLayout
@@ -37,19 +35,26 @@
 
             <ImageButton
                 android:id="@+id/doc_consultant"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginEnd="25dp"
                 android:scaleType="centerInside"
-                android:src="@mipmap/ic_launcher"
-                tools:ignore="SpeakableTextPresentCheck" />
+                android:src="@drawable/doctor"
+                tools:ignore="SpeakableTextPresentCheck"
+                android:background="@xml/rounded_background"
+                android:clipToOutline="true"
+                />
 
             <ImageButton
                 android:id="@+id/typ_doctor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/ic_launcher"
-                tools:ignore="SpeakableTextPresentCheck" />
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/doctor"
+                android:scaleType="centerInside"
+                tools:ignore="SpeakableTextPresentCheck"
+                android:background="@xml/rounded_background"
+                android:clipToOutline="true"
+                />
         </LinearLayout>
 
         <LinearLayout
@@ -62,18 +67,26 @@
 
             <ImageButton
                 android:id="@+id/health_aware"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:src="@mipmap/ic_launcher"
-                tools:ignore="SpeakableTextPresentCheck" />
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/doctor"
+                android:scaleType="centerInside"
+                android:layout_marginEnd="25dp"
+                tools:ignore="SpeakableTextPresentCheck"
+                android:background="@xml/rounded_background"
+                android:clipToOutline="true"
+                />
 
             <ImageButton
                 android:id="@+id/med_appliances"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/ic_launcher"
-                tools:ignore="SpeakableTextPresentCheck" />
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/doctor"
+                android:scaleType="centerInside"
+                tools:ignore="SpeakableTextPresentCheck"
+                android:background="@xml/rounded_background"
+                android:clipToOutline="true"
+                />
         </LinearLayout>
     </LinearLayout>
 
