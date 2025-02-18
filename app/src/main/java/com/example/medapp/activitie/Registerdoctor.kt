@@ -1,6 +1,7 @@
 package com.example.medapp.activitie
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
@@ -8,6 +9,7 @@ import android.widget.Button
 import android.widget.ListView
 import android.widget.PopupWindow
 import android.widget.Spinner
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
@@ -38,11 +40,14 @@ class Registerdoctor : AppCompatActivity() {
         }
 
 
-        val genderDropdown: AutoCompleteTextView = findViewById(R.id.genderDropdown)
-        val genderOptions = resources.getStringArray(R.array.gender_options)
-        val adapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, genderOptions)
-        genderDropdown.setAdapter(adapter)
-        genderDropdown.requestFocus()
+        val Login = findViewById<TextView>(R.id.txt_login)
+
+        // Set Click Listener
+        Login.setOnClickListener {
+            val intent = Intent(this, Loginactivity::class.java)
+            startActivity(intent)
+        }
+
 
 
     }

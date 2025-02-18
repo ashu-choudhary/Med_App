@@ -24,13 +24,16 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/txt_signup"
         android:layout_margin="10dp"
+        android:autofillHints=""
         android:hint="@string/enter_Name"
         android:inputType="textPersonName"
         android:maxLength="15"
         android:maxLines="1"
         android:minHeight="48dp"
         android:padding="5dp"
-        android:textSize="17sp" />
+        android:textColorHint="#546E7A"
+        android:textSize="17sp"
+        tools:ignore="VisualLintTextFieldSize" />
 
     <EditText
         android:id="@+id/et_email"
@@ -38,14 +41,17 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/et_name"
         android:layout_margin="10dp"
+        android:autofillHints=""
         android:hint="@string/enter_email"
+        android:importantForAutofill="no"
         android:inputType="textEmailAddress"
         android:maxLength="15"
         android:maxLines="1"
         android:minHeight="48dp"
         android:padding="5dp"
+        android:textColorHint="#546E7A"
         android:textSize="17sp"
-        />
+        tools:ignore="VisualLintTextFieldSize" />
 
     <EditText
         android:id="@+id/et_password"
@@ -58,9 +64,10 @@
         android:maxLength="15"
         android:maxLines="1"
         android:minHeight="48dp"
+        android:textColorHint="#546E7A"
         android:padding="5dp"
         android:textSize="17sp"
-        />
+        tools:ignore="Autofill,VisualLintTextFieldSize" />
 
     <EditText
         android:id="@+id/et_mobile"
@@ -68,14 +75,16 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/et_password"
         android:layout_margin="10dp"
+        android:autofillHints=""
         android:hint="@string/enter_contact"
         android:inputType="phone"
         android:maxLength="10"
         android:maxLines="1"
         android:minHeight="48dp"
         android:padding="5dp"
+        android:textColorHint="#546E7A"
         android:textSize="17sp"
-        />
+        tools:ignore="VisualLintTextFieldSize" />
 
     <EditText
         android:id="@+id/et_address"
@@ -83,14 +92,16 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/et_mobile"
         android:layout_margin="10dp"
+        android:autofillHints=""
         android:hint="@string/enter_address"
         android:inputType="textPostalAddress"
         android:maxLength="15"
         android:maxLines="1"
         android:minHeight="48dp"
+        android:textColorHint="#546E7A"
         android:padding="5dp"
         android:textSize="17sp"
-        />
+        tools:ignore="VisualLintTextFieldSize" />
 
     <EditText
         android:id="@+id/et_age"
@@ -98,59 +109,52 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/et_address"
         android:layout_margin="10dp"
+        android:autofillHints=""
         android:hint="@string/enter_age"
         android:inputType="number"
         android:maxLength="3"
         android:maxLines="1"
+        android:textColorHint="#546E7A"
         android:minHeight="48dp"
         android:padding="5dp"
         android:textSize="17sp"
-        />
+        tools:ignore="VisualLintTextFieldSize" />
 
     <Spinner
-        android:id="@+id/insurancespinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/genderSpinnerpatient"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="10dp"
-        android:layout_marginTop="20dp"
+        android:id="@+id/genderSpinner"
         android:minHeight="48dp"
-        />
-
-
-
-    <Spinner
-        android:id="@+id/genderSpinnerpatient"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:textSize="17sp"
+        android:layout_margin="10dp"
         android:layout_below="@+id/et_age"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="10dp"
-        android:layout_marginTop="20dp"
-        android:minHeight="48dp"
-        android:prompt="@string/gender_prompt"/>
-
-    <Button
-        android:id="@+id/btn_signup"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/sign_up"
-        android:layout_above="@+id/txt_login"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="20dp"
-        />
+        android:entries="@array/gender_array" />
+
+    <Spinner
+        android:id="@+id/insured"
+        android:minHeight="48dp"
+        android:padding="5dp"
+        android:textSize="17sp"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/genderSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/insurance" />
+
 
     <TextView
-        android:id="@+id/txt_login"
-        android:layout_width="wrap_content"
+        android:id="@+id/txt_regster"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/login_here"
-        android:textSize="18sp"
-        android:textStyle="bold"
+        android:text="@string/register_yourself"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="10dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:textSize="16sp"
+        android:padding="5dp"
+        android:textAlignment="center"
+        android:textStyle="italic"
+        android:textColor="#000000"
         />
 </RelativeLayout>

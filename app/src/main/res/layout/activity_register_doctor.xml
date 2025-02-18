@@ -114,15 +114,14 @@
 
     <Spinner
         android:id="@+id/genderSpinner"
+        android:minHeight="48dp"
+        android:padding="5dp"
+        android:textSize="17sp"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/et_address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/et_address"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="10dp"
-        android:layout_marginTop="20dp"
-        android:minHeight="48dp"
-        android:prompt="@string/gender_prompt"
-        android:spinnerMode="dropdown"/>
+        android:entries="@array/gender_array" />
 
 
 
@@ -136,40 +135,25 @@
         android:layout_above="@+id/txt_login"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
         />
-
-
-
 
 
     <TextView
         android:id="@+id/txt_login"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/login_here"
-        android:textSize="18sp"
-        android:textStyle="bold"
+        android:text="@string/log_in"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="10dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:textSize="16sp"
+        android:padding="5dp"
+        android:textAlignment="center"
+        android:textStyle="italic"
+        android:textColor="#000000"
         />
 
 
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Select Gender"
-        android:layout_below="@id/genderSpinner"
-        >
-
-        <AutoCompleteTextView
-            android:id="@+id/genderDropdown"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text" />
-
-    </com.google.android.material.textfield.TextInputLayout>
 </RelativeLayout>
 
