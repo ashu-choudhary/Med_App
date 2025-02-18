@@ -27,7 +27,7 @@
         android:layout_below="@+id/logo_img"
         android:layout_margin="10dp"
         android:hint="@string/mobile_number"
-        android:inputType="number"
+        android:inputType="text"
         android:maxLength="10"
         android:minHeight="48dp"
         android:minLines="1"
