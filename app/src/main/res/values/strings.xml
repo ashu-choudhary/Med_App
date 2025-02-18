@@ -30,42 +30,15 @@
     <string name="open_drawer">Open Drawer</string>
     <string name="close_drawer">Close Drawer</string>
     <string name="diseases">Diseases</string>
-    <string-array name="gender_options">
-        <item>Male</item>
-        <item>Female</item>
-        <item>Other</item>
-    </string-array>
-    <string-array name="Gender_options">
-        <item>Male</item>
-        <item>Female</item>
-        <item>Other</item>
-    </string-array>
+
     <string name="gender_prompt">Select Gender</string>
-
-    <string-array name="Specialization">
-        <item>MBBS</item>
-        <item>MCH</item>
-        <item>MD</item>
-        <item>DM</item>
-        <item>MDS</item>
-        <item>MS Ortho</item>
-        <item>DA</item>
-        <item>DCH</item>
-        <item>DGU</item>
-        <item>DLO</item>
-        <item>DOMS</item>
-        <item>DPM</item>
-        <item>DTMH</item>
-        <item>DVD</item>
-        <item>DTCD</item>
-        <item>BAMS</item>
-        <item>BUMS</item>
-        <item>BHMS</item>
-        <item>BDS</item>
-        <item>BIMS</item>
-
+    <string-array name="gender_array">
+        <item>Select Gender</item>
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+        <item>Prefer not to say</item>
     </string-array>
-
     <string-array name="insurance">
         <item>--Insured--</item>
         <item>Yes</item>
@@ -80,4 +53,5 @@
     <string name="contact">+91 7983132721</string>
     <string name="edit_profile">Edit Details</string>
     <string name="profile_image">Profile_Image</string>
+    <string name="image_of_a_doctor">Image of a doctor</string>
 </resources>
