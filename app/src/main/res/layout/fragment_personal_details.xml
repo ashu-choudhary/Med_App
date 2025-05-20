@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.Personal_details_fragment">
+    tools:context="com.example.medapp.pat_fragment.Personal_details_fragment">
 
     <TextView
         android:id="@+id/txt_details"

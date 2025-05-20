@@ -1,4 +1,4 @@
-package com.example.medapp.activitie
+package com.example.medapp.pat_activites
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.medapp.R
+import com.example.medapp.activitie.Loginactivity
 
 class Registerpatient : AppCompatActivity() {
 

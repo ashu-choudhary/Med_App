@@ -30,6 +30,7 @@
     <string name="open_drawer">Open Drawer</string>
     <string name="close_drawer">Close Drawer</string>
     <string name="diseases">Diseases</string>
+    <string name="Specialised_Doc">Specialised Doctor</string>
 
     <string name="gender_prompt">Select Gender</string>
     <string-array name="gender_array">
@@ -38,6 +39,10 @@
         <item>Female</item>
         <item>Other</item>
         <item>Prefer not to say</item>
+    </string-array>
+    <string-array name="doctype">
+        <item>Select Doctor Type</item>
+
     </string-array>
     <string-array name="insurance">
         <item>--Insured--</item>

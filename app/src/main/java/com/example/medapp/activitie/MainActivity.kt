@@ -17,8 +17,8 @@ import androidx.drawerlayout.widget.DrawerLayout
 import com.example.medapp.R
 import com.example.medapp.fragment.Diseases_fragment
 import com.example.medapp.fragment.Home_fragment
-import com.example.medapp.fragment.Personal_details_fragment
-import com.example.medapp.fragment.Profile_fragment
+import com.example.medapp.pat_fragment.Personal_details_fragment
+import com.example.medapp.pat_fragment.Profile_fragment
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {

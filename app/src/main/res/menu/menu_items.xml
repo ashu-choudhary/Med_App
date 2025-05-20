@@ -18,7 +18,7 @@
         <item
             android:id="@+id/nav_about"
             android:icon="@drawable/baseline_medical_services_24"
-            android:title="@string/diseases"
+            android:title="@string/Specialised_Doc"
             />
     </group>
 </menu>

@@ -1,4 +1,4 @@
-package com.example.medapp.fragment
+package com.example.medapp.pat_fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,8 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.medapp.R
 
-
-class Personal_details_fragment : Fragment() {
+class Profile_fragment : Fragment() {
 
 
     override fun onCreateView(
@@ -16,8 +15,7 @@ class Personal_details_fragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_personal_details, container, false)
+        return inflater.inflate(R.layout.fragment_profile, container, false)
     }
-
 
 }

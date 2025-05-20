@@ -1,25 +1,16 @@
-package com.example.medapp.activitie
+package com.example.medapp.doc_activites
 
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.widget.ArrayAdapter
-import android.widget.AutoCompleteTextView
-import android.widget.Button
-import android.widget.ListView
-import android.widget.PopupWindow
-import android.widget.Spinner
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.medapp.R
+import com.example.medapp.activitie.Loginactivity
 import com.example.medapp.databinding.ActivityRegisterDoctorBinding
 
 class Registerdoctor : AppCompatActivity() {

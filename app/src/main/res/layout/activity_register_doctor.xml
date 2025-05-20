@@ -5,7 +5,7 @@
     android:id="@+id/doc_register"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activitie.Registerdoctor">
+    tools:context=".doc_activites.Registerdoctor">
 
 
     <TextView
@@ -124,8 +124,18 @@
         android:entries="@array/gender_array" />
 
 
-
-
+    <Spinner
+        android:id="@+id/doctype"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/genderSpinner"
+        android:layout_margin="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:entries="@array/doctype"
+        android:minHeight="48dp"
+        android:padding="5dp"
+        android:textSize="17sp" />
 
     <Button
         android:id="@+id/btn_signup"

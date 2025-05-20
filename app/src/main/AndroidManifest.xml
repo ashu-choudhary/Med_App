@@ -16,7 +16,7 @@
             android:name=".activitie.ForgetPassword"
             android:exported="false" />
         <activity
-            android:name=".activitie.Registerdoctor"
+            android:name=".doc_activites.Registerdoctor"
             android:exported="false"
             android:theme="@style/Theme.MedApp" >
         </activity>
@@ -24,13 +24,9 @@
             android:name=".fragment.Home_fragment"
             android:exported="false" />
         <activity
-            android:name=".activitie.Registerpatient"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:name=".pat_activites.Registerpatient"
+            android:exported="false" >
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
         <activity
@@ -48,8 +44,13 @@
         </activity>
         <activity
             android:name=".activitie.MainActivity"
-            android:exported="false" >
+            android:exported="true" >
 
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
