@@ -17,7 +17,7 @@
         android:src="@drawable/ic_launcher_foreground"
         tools:ignore="ImageContrastCheck" />
     <TextView
-        android:id="@+id/head_text"
+        android:id="@+id/nav_header_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/navigation_drawer"

@@ -20,5 +20,9 @@
             android:icon="@drawable/baseline_medical_services_24"
             android:title="@string/Specialised_Doc"
             />
+        <item
+            android:id="@+id/nav_logout"
+            android:title="Logout"
+            android:icon="@drawable/outline_arrow_circle_right_24"/>
     </group>
 </menu>
