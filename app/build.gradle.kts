@@ -37,10 +37,14 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
+
 }
 
 dependencies {
     implementation(platform(libs.firebase.bom))
+    implementation ("com.google.firebase:firebase-firestore-ktx")
+    implementation ("com.google.firebase:firebase-database:20.3.0")
     implementation(libs.firebase.analytics)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -55,4 +59,6 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation(libs.firebase.auth)
+
 }
