@@ -42,6 +42,8 @@
     </string-array>
     <string-array name="doctype">
         <item>Select Doctor Type</item>
+        <item>Select Doctor Type</item>
+        <item>Select Doctor Type</item>
 
     </string-array>
     <string-array name="insurance">
