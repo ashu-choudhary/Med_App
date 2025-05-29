@@ -32,7 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/cardview"
-        android:text="@string/AshuChoudhary"
+        android:text="Name"
         android:textAlignment="center"
         android:textSize="26sp"
         android:layout_marginTop="20dp" />
@@ -42,7 +42,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txt_name"
-        android:text="@string/Email"
+        android:text="Email"
         android:textAlignment="center"
         android:textSize="26sp"
         android:layout_marginTop="20dp" />
@@ -52,7 +52,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txt_email"
-        android:text="@string/address"
+        android:text="Address"
         android:textAlignment="center"
         android:textSize="26sp"
         android:layout_marginTop="20dp" />
@@ -62,7 +62,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txt_address"
-        android:text="@string/contact"
+        android:text="Contact"
         android:textAlignment="center"
         android:textSize="26sp"
         android:layout_marginTop="20dp" />

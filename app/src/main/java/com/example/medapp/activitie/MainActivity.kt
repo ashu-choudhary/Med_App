@@ -2,9 +2,11 @@
 
 package com.example.medapp.activitie
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.FrameLayout
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -19,7 +21,9 @@ import com.example.medapp.fragment.Diseases_fragment
 import com.example.medapp.fragment.Home_fragment
 import com.example.medapp.pat_fragment.Personal_details_fragment
 import com.example.medapp.pat_fragment.Profile_fragment
+import com.example.medapp.activitie.Firstpage
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,11 +31,22 @@ class MainActivity : AppCompatActivity() {
     private lateinit var coordinatorLayout: CoordinatorLayout
     private lateinit var toolbar: Toolbar
     private lateinit var frameLayout: FrameLayout
-    private lateinit var navigationView : NavigationView
+    private lateinit var navigationView: NavigationView
 
-    private var previousMenuItems : MenuItem? = null
+    private var previousMenuItems: MenuItem? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // 1. Check FirebaseAuth login state
+        val user = FirebaseAuth.getInstance().currentUser
+        if (user == null) {
+            // Not logged in, redirect to Register/Login
+            startActivity(Intent(this, Firstpage::class.java))
+            finish()
+            return
+        }
+
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.drawerLayout)) { v, insets ->
@@ -47,7 +62,6 @@ class MainActivity : AppCompatActivity() {
         navigationView = findViewById(R.id.navigationView)
 
         setuptoolbar()
-
         opendashboard()
 
         val actionBarDrawerToggle = ActionBarDrawerToggle(
@@ -56,12 +70,16 @@ class MainActivity : AppCompatActivity() {
             R.string.open_drawer,
             R.string.close_drawer
         )
-
         drawerLayout.addDrawerListener(actionBarDrawerToggle)
         actionBarDrawerToggle.syncState()
 
+        // (Optional) Show user email in navigation drawer header
+        val headerView = navigationView.getHeaderView(0)
+        val navHeaderEmail = headerView.findViewById<TextView>(R.id.nav_header_email)
+        navHeaderEmail?.text = user.email
+
         navigationView.setNavigationItemSelectedListener {
-            if (previousMenuItems != null){
+            if (previousMenuItems != null) {
                 previousMenuItems?.isChecked = false
             }
 
@@ -73,75 +91,72 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_dashboard -> {
                     opendashboard()
                     drawerLayout.closeDrawers()
-
                 }
-
                 R.id.nav_profile -> {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.frameLayout, Profile_fragment())
                         .commit()
-
-                    supportActionBar?.title = "Profile_fragment"
+                    supportActionBar?.title = "Profile"
                     drawerLayout.closeDrawers()
                 }
-
                 R.id.nav_favourite -> {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.frameLayout, Personal_details_fragment())
                         .commit()
-
-                    supportActionBar?.title = "Favourite"
+                    supportActionBar?.title = "Personal Details"
                     drawerLayout.closeDrawers()
                 }
-
                 R.id.nav_about -> {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.frameLayout, Diseases_fragment())
                         .commit()
-
-                    supportActionBar?.title = "About"
+                    supportActionBar?.title = "Diseases"
                     drawerLayout.closeDrawers()
                 }
+                R.id.nav_logout -> {
+                    logout()
+                }
             }
-            return@setNavigationItemSelectedListener true
+            true
         }
     }
 
-
-    private fun setuptoolbar(){
+    private fun setuptoolbar() {
         setSupportActionBar(toolbar)
-        supportActionBar?.title="ToolBar Title"
+        supportActionBar?.title = "Dashboard"
         supportActionBar?.setHomeButtonEnabled(true)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = item.itemId
-
-        if(id == android.R.id.home){
-            drawerLayout.openDrawer((GravityCompat.START))
+        if (id == android.R.id.home) {
+            drawerLayout.openDrawer(GravityCompat.START)
         }
         return super.onOptionsItemSelected(item)
     }
 
-    private fun opendashboard(){
+    private fun opendashboard() {
         val fragment = Home_fragment()
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.frameLayout, fragment)
         transaction.commit()
-        supportActionBar?.title="DashBoard"
+        supportActionBar?.title = "Dashboard"
         navigationView.setCheckedItem(R.id.nav_dashboard)
     }
 
-
-    @Deprecated("This method has been deprecated in favor of using the\n      {@link OnBackPressedDispatcher} via {@link #getOnBackPressedDispatcher()}.\n      The OnBackPressedDispatcher controls how back button events are dispatched\n      to one or more {@link OnBackPressedCallback} objects.")
     override fun onBackPressed() {
         val frag = supportFragmentManager.findFragmentById(R.id.frameLayout)
-
         when (frag) {
             !is Home_fragment -> opendashboard()
-
             else -> super.onBackPressed()
         }
+    }
+
+    // Add this for logging out
+    private fun logout() {
+        FirebaseAuth.getInstance().signOut()
+        startActivity(Intent(this, Firstpage::class.java))
+        finish()
     }
 }

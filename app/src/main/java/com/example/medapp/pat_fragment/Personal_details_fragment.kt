@@ -1,5 +1,6 @@
 package com.example.medapp.pat_fragment
 
+import android.content.ContentValues
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,9 +10,8 @@ import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Button
 import android.widget.EditText
-import androidx.compose.material3.Button
 import com.example.medapp.R
-
+import com.example.medapp.db.MyDatabaseHelper
 
 class Personal_details_fragment : Fragment() {
 
@@ -37,24 +37,27 @@ class Personal_details_fragment : Fragment() {
         val bloodGroups = arrayOf("A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-")
         val sexes = arrayOf("Male", "Female", "Other")
 
-        val bloodGroupAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, bloodGroups)
-        val sexAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, sexes)
-
-        bloodGroupDropdown.setAdapter(bloodGroupAdapter)
-        sexDropdown.setAdapter(sexAdapter)
+        bloodGroupDropdown.setAdapter(ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, bloodGroups))
+        sexDropdown.setAdapter(ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, sexes))
 
         bloodGroupDropdown.setOnClickListener {
             if (bloodGroupDropdown.isEnabled) bloodGroupDropdown.showDropDown()
         }
-
         sexDropdown.setOnClickListener {
             if (sexDropdown.isEnabled) sexDropdown.showDropDown()
         }
+
+        // 1. Load saved data from SQLite
+        loadPersonalDetails(heightInput, weightInput, ageInput, bloodGroupDropdown, sexDropdown)
 
         // Initially disable editing
         setFieldsEnabled(false, heightInput, weightInput, ageInput, bloodGroupDropdown, sexDropdown)
 
         editButton.setOnClickListener {
+            if (isInEditMode) {
+                // Save to SQLite
+                savePersonalDetails(heightInput, weightInput, ageInput, bloodGroupDropdown, sexDropdown)
+            }
             isInEditMode = !isInEditMode
             setFieldsEnabled(isInEditMode, heightInput, weightInput, ageInput, bloodGroupDropdown, sexDropdown)
             editButton.text = if (isInEditMode) "Save" else "Edit"
@@ -71,5 +74,55 @@ class Personal_details_fragment : Fragment() {
         }
     }
 
+    private fun savePersonalDetails(
+        heightInput: EditText,
+        weightInput: EditText,
+        ageInput: EditText,
+        bloodGroupDropdown: AutoCompleteTextView,
+        sexDropdown: AutoCompleteTextView
+    ) {
+        val dbHelper = MyDatabaseHelper(requireContext())
+        val db = dbHelper.writableDatabase
 
+        // For demo: update the latest user
+        val cursor = db.rawQuery("SELECT id FROM users ORDER BY id DESC LIMIT 1", null)
+        var userId: Int? = null
+        if (cursor.moveToFirst()) {
+            userId = cursor.getInt(cursor.getColumnIndexOrThrow("id"))
+        }
+        cursor.close()
+
+        if (userId != null) {
+            val values = ContentValues().apply {
+                put("height", heightInput.text.toString())
+                put("weight", weightInput.text.toString())
+                put("age", ageInput.text.toString())
+                put("blood_group", bloodGroupDropdown.text.toString())
+                put("sex", sexDropdown.text.toString())
+            }
+            db.update("users", values, "id=?", arrayOf(userId.toString()))
+        }
+        db.close()
+    }
+
+    private fun loadPersonalDetails(
+        heightInput: EditText,
+        weightInput: EditText,
+        ageInput: EditText,
+        bloodGroupDropdown: AutoCompleteTextView,
+        sexDropdown: AutoCompleteTextView
+    ) {
+        val dbHelper = MyDatabaseHelper(requireContext())
+        val db = dbHelper.readableDatabase
+        val cursor = db.rawQuery("SELECT * FROM users ORDER BY id DESC LIMIT 1", null)
+        if (cursor.moveToFirst()) {
+            heightInput.setText(cursor.getString(cursor.getColumnIndexOrThrow("height") ?: 0))
+            weightInput.setText(cursor.getString(cursor.getColumnIndexOrThrow("weight") ?: 0))
+            ageInput.setText(cursor.getString(cursor.getColumnIndexOrThrow("age") ?: 0))
+            bloodGroupDropdown.setText(cursor.getString(cursor.getColumnIndexOrThrow("blood_group") ?: 0), false)
+            sexDropdown.setText(cursor.getString(cursor.getColumnIndexOrThrow("sex") ?: 0), false)
+        }
+        cursor.close()
+        db.close()
+    }
 }
