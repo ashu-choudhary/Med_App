@@ -1,3 +1,11 @@
 <resources>
-    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="disease_card_width">100dp</dimen>
+    <dimen name="disease_card_height">120dp</dimen>
+    <dimen name="disease_card_image_width">90dp</dimen>
+    <dimen name="disease_card_image_height">85dp</dimen>
+    <dimen name="disease_card_margin">8dp</dimen>
+    <dimen name="disease_card_text_size">14sp</dimen>
+    <dimen name="disease_title_size">28sp</dimen>
+    <dimen name="recycler_spacing">16dp</dimen>
+
 </resources>
