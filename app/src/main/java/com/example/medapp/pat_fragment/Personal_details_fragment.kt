@@ -1,5 +1,6 @@
 package com.example.medapp.pat_fragment
 
+import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -24,6 +25,7 @@ class Personal_details_fragment : Fragment() {
         return inflater.inflate(R.layout.fragment_personal_details, container, false)
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -40,11 +42,13 @@ class Personal_details_fragment : Fragment() {
         bloodGroupDropdown.setAdapter(ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, bloodGroups))
         sexDropdown.setAdapter(ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, sexes))
 
-        bloodGroupDropdown.setOnClickListener {
-            if (bloodGroupDropdown.isEnabled) bloodGroupDropdown.showDropDown()
+        bloodGroupDropdown.setOnTouchListener { v, event ->
+            bloodGroupDropdown.showDropDown()
+            false
         }
-        sexDropdown.setOnClickListener {
-            if (sexDropdown.isEnabled) sexDropdown.showDropDown()
+        sexDropdown.setOnTouchListener { v, event ->
+            sexDropdown.showDropDown()
+            false
         }
 
         // 1. Load saved data from SQLite
@@ -116,11 +120,11 @@ class Personal_details_fragment : Fragment() {
         val db = dbHelper.readableDatabase
         val cursor = db.rawQuery("SELECT * FROM users ORDER BY id DESC LIMIT 1", null)
         if (cursor.moveToFirst()) {
-            heightInput.setText(cursor.getString(cursor.getColumnIndexOrThrow("height") ?: 0))
-            weightInput.setText(cursor.getString(cursor.getColumnIndexOrThrow("weight") ?: 0))
-            ageInput.setText(cursor.getString(cursor.getColumnIndexOrThrow("age") ?: 0))
-            bloodGroupDropdown.setText(cursor.getString(cursor.getColumnIndexOrThrow("blood_group") ?: 0), false)
-            sexDropdown.setText(cursor.getString(cursor.getColumnIndexOrThrow("sex") ?: 0), false)
+            heightInput.setText(cursor.getString(cursor.getColumnIndexOrThrow("height")))
+            weightInput.setText(cursor.getString(cursor.getColumnIndexOrThrow("weight")))
+            ageInput.setText(cursor.getString(cursor.getColumnIndexOrThrow("age")))
+            bloodGroupDropdown.setText(cursor.getString(cursor.getColumnIndexOrThrow("blood_group")), false)
+            sexDropdown.setText(cursor.getString(cursor.getColumnIndexOrThrow("sex")), false)
         }
         cursor.close()
         db.close()

@@ -28,11 +28,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                android:focusable="false"
                 android:hint="Select Blood Group"
                 android:inputType="none"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:clickable="true"
+                android:cursorVisible="false"
                 android:minHeight="48dp"
                 android:textColor="@android:color/black" />
+
 
             <!-- Sex -->
             <TextView
@@ -47,11 +51,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                android:focusable="false"
                 android:hint="Select Sex"
                 android:inputType="none"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:clickable="true"
+                android:cursorVisible="false"
                 android:minHeight="48dp"
                 android:textColor="@android:color/black" />
+
 
             <!-- Height -->
             <TextView
