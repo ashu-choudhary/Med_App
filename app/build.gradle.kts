@@ -45,6 +45,8 @@ dependencies {
     implementation(platform(libs.firebase.bom))
     implementation ("com.google.firebase:firebase-firestore-ktx")
     implementation ("com.google.firebase:firebase-database:20.3.0")
+    implementation ("com.github.yukuku:ambilwarna:2.0.1")
+
     implementation(libs.firebase.analytics)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
