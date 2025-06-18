@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
     <application
         android:name=".MyApp"
         android:allowBackup="true"
@@ -14,31 +18,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MedApp"
         tools:targetApi="33">
-        <activity
-            android:name=".fragment.DiseaseAdapter"
-            android:exported="false" />
+
+
+
         <activity
             android:name=".activitie.ForgetPassword"
             android:exported="false" />
         <activity
             android:name=".doc_activites.Registerdoctor"
             android:exported="false"
-            android:theme="@style/Theme.MedApp"></activity>
+            android:theme="@style/Theme.MedApp"/>
         <activity
             android:name=".fragment.Home_fragment"
             android:exported="false"
             android:theme="@style/Theme.MedApp"
-            tools:ignore="Instantiatable"></activity>
+            tools:ignore="Instantiatable"/>
         <activity
             android:name=".pat_activites.Registerpatient"
-            android:exported="false"></activity>
+            android:exported="false"/>
         <activity
             android:name=".activitie.Firstpage"
-            android:exported="false"></activity>
+            android:exported="false"/>
         <activity
             android:name=".activitie.Loginactivity"
             android:exported="false"
-            android:theme="@style/Theme.MedApp"></activity>
+            android:theme="@style/Theme.MedApp"/>
         <activity
             android:name=".activitie.MainActivity"
             android:exported="true">
