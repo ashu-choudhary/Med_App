@@ -24,5 +24,15 @@
             android:id="@+id/nav_logout"
             android:title="Logout"
             android:icon="@drawable/outline_arrow_circle_right_24"/>
+        <item
+            android:id="@+id/nav_draw"
+            android:title="Drawing Canvas"
+            android:icon="@drawable/outline_pad_24" />
+        <item
+            android:id="@+id/disease_list"
+            android:title="Disease Types"
+            android:icon="@drawable/outline_list_24" />
+
+
     </group>
 </menu>

@@ -17,11 +17,13 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.medapp.R
-import com.example.medapp.fragment.Diseases_fragment
+import com.example.medapp.com.example.medapp.pat_fragment.Diseases_fragment
 import com.example.medapp.fragment.Home_fragment
 import com.example.medapp.pat_fragment.Personal_details_fragment
 import com.example.medapp.pat_fragment.Profile_fragment
 import com.example.medapp.activitie.Firstpage
+import com.example.medapp.doc_fragment.DoctorPad
+import com.example.medapp.pat_fragment.Diseases_list
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 
@@ -116,6 +118,21 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_logout -> {
                     logout()
                 }
+                R.id.nav_draw -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.frameLayout, DoctorPad())
+                        .commit()
+                    supportActionBar?.title = "Drawing Pad"
+                    drawerLayout.closeDrawers()
+                }
+                R.id.disease_list -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.frameLayout, Diseases_list())
+                        .commit()
+                    supportActionBar?.title = "Diseases Types"
+                    drawerLayout.closeDrawers()
+                }
+
             }
             true
         }
